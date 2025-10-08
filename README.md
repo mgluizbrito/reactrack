@@ -106,3 +106,33 @@ The `tsconfig.json` specifies modern standards for the backend:
     "outDir": "./dist"
   }
 }
+```
+
+<hr>
+
+## Server Backend
+
+<img src="https://github.com/gui-silva-github/reactrack/blob/main/ui-ux/npm-run-server.png" />
+
+<hr>
+
+## Swagger Backend
+
+<img src="https://github.com/gui-silva-github/reactrack/blob/main/ui-ux/home-server.png" />
+
+<hr>
+
+## Client Frontend
+
+<img src="https://github.com/gui-silva-github/reactrack/blob/main/ui-ux/npm-run-dev.png" />
+
+<hr>
+
+## UI/UX Frontend
+
+<img src="https://github.com/gui-silva-github/reactrack/blob/main/ui-ux/home-client.png" />
+
+
+
+
+
