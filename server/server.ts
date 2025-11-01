@@ -7,6 +7,7 @@ import authRouter from "./routes/auth"
 import userRouter from "./routes/user"
 import errorRouter from "./routes/error"
 import homeRouter from "./routes/home"
+import fitRouter from "./routes/fit"
 import path from "path"
 import { fileURLToPath } from "url"
 
@@ -19,16 +20,14 @@ const port = process.env.PORT || 4000
 
 connectDB()
 
-const allowedOrigins = ['http://localhost:5173']
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}))
 
 app.use(express.json())
 
 app.use(cookieParser())
-
-app.use(cors({
-    origin: allowedOrigins,
-    credentials: true
-}))
 
 app.use(express.static(path.join(__dirname, 'public')))
 

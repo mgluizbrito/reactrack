@@ -14,13 +14,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
-const allowedOrigins = ['http://localhost:5173'];
 app.use(express.json());
-app.use(cookieParser());
 app.use(cors({
-    origin: allowedOrigins,
+    origin: 'http://localhost:5173',
     credentials: true
-}));
+}))
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/auth', authRouter);
