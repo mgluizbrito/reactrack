@@ -9,16 +9,16 @@ import Div from "../Html/Div/Div";
 import Image from "../Html/Image/Image";
 
 const navLinks = [
-    { name: "TalkNet", path: "/talknet" },
-    { name: "Viagens", path: "/wanderwise" },
-    { name: "Opiniões", path: "/opinly" },
-    { name: "Eventos", path: "/convene" },
-    { name: "Filmes", path: "/movies" },
-    { name: "Investimentos", path: "/investments" },
-    { name: "Projetos", path: "/projects" },
-    { name: "Orçamentos", path: "/budget" },
-    { name: "Academia", path: "/fit" },
-    { name: "Criptomoedas", path: "/crypto" },
+    { name: "TalkNet", path: "/systems/talknet" },
+    { name: "Viagens", path: "/systems/wanderwise" },
+    { name: "Opiniões", path: "/systems/opinly" },
+    { name: "Eventos", path: "/systems/convene" },
+    { name: "Filmes", path: "/systems/movies" },
+    { name: "Investimentos", path: "/systems/investments" },
+    { name: "Projetos", path: "/systems/projects" },
+    { name: "Orçamentos", path: "/systems/budget" },
+    { name: "Academia", path: "/systems/fit" },
+    { name: "Criptomoedas", path: "/systems/crypto" },
     { name: "Ajuda", path: "/help" },
 ];
 
@@ -35,11 +35,13 @@ const NavbarSystems: React.FC = () => {
 
     const { userData } = context
 
-    const linkClasses = (path: string) =>
-        `text-sm font-medium px-3 py-2 rounded-md transition duration-200 
-         ${location.pathname === path
+    const linkClasses = (path: string) => {
+        const isActive = location.pathname === path || location.pathname.startsWith(path + '/');
+        return `text-sm font-medium px-3 py-2 rounded-md transition duration-200 
+         ${isActive
             ? 'bg-blue-600 text-white'
-            : 'text-gray-700 hover:bg-gray-100'}`; 
+            : 'text-gray-700 hover:bg-gray-100'}`;
+    }; 
     
     const filteredNavLinks = navLinks.filter(link => {
         if (!userData && link.path === '/systems') {
