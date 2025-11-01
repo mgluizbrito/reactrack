@@ -1,1 +1,187 @@
 @import "tailwindcss";
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+  
+.right-arrow,
+.left-arrow {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF2625;
+    font-size: 25px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(1, 1);
+    transition: 0.3s all ease-in-out;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+  
+.right-arrow:hover,
+.left-arrow:hover {
+    transform: translateY(-50%) scale(1.3, 1.3);
+}
+  
+.react-horizontal-scrolling-menu--wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+    display: flex;
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper {
+    display: flex;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.react-horizontal-scrolling-menu--item {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.detail-image {
+    width: 729px;
+    height: 720px;
+}
+  
+.hero-banner-img {
+    position: absolute;
+    right: 40px;
+    top: 0px;
+    width: 700px;
+    height: 900px;
+    margin-top: -330px;  
+}
+  
+.exercise-card {
+    width: 400px;
+    height: 445px;
+    background: #fff;
+    border-top: 4px solid #FF2625;
+    border-bottom-left-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 10px;
+    transform: scale(1, 1);
+    transition: 0.3s all ease-in-out;
+}
+  
+.exercise-card img {
+    height: 326px;
+}
+  
+.bodyPart-card {
+    transform: scale(1, 1);
+    transition: 0.3s all ease-in-out;
+}
+  
+.exercise-card:hover,
+.bodyPart-card:hover {
+    transform: scale(1.1, 1.1);
+}
+  
+.search-btn:hover {
+    color: #FF2625 !important;
+    border: 1px solid #FF2625 !important;
+}
+  
+.exercise-video {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 387px;
+    height: 381px;
+    text-decoration: none;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+  
+@media screen and (max-width:1200px) {
+    .detail-image {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .react-horizontal-scrolling-menu--scroll-container {
+      width: 500px;
+    }
+  
+    .left-arrow,
+    .right-arrow {
+      position: absolute !important;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .left-arrow:hover,
+    .right-arrow:hover {
+      transform: translateY(-50%) scale(1.3, 1.3);
+    }
+  
+    .hero-banner-img {
+      display: none;
+    }
+  
+    .exercise-card {
+      width: 320px;
+    }
+  
+    .exercise-video {
+      width: 320px;
+      height: 300px;
+    }
+  
+  }
+  
+  @media screen and (max-width:400px) {
+    .exercise-card {
+      width: 280px;
+    }
+}
