@@ -16,7 +16,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-  
+
 .right-arrow,
 .left-arrow {
     cursor: pointer;
@@ -45,12 +45,12 @@
 .right-arrow {
     right: 10px;
 }
-  
+
 .right-arrow:hover,
 .left-arrow:hover {
     transform: translateY(-50%) scale(1.3, 1.3);
 }
-  
+
 .react-horizontal-scrolling-menu--wrapper {
     width: 100%;
     display: flex;
@@ -85,16 +85,16 @@
     width: 729px;
     height: 720px;
 }
-  
+
 .hero-banner-img {
     position: absolute;
     right: 40px;
     top: 0px;
     width: 700px;
     height: 900px;
-    margin-top: -330px;  
+    margin-top: -330px;
 }
-  
+
 .exercise-card {
     width: 400px;
     height: 445px;
@@ -109,26 +109,26 @@
     transform: scale(1, 1);
     transition: 0.3s all ease-in-out;
 }
-  
+
 .exercise-card img {
     height: 326px;
 }
-  
+
 .bodyPart-card {
     transform: scale(1, 1);
     transition: 0.3s all ease-in-out;
 }
-  
+
 .exercise-card:hover,
 .bodyPart-card:hover {
     transform: scale(1.1, 1.1);
 }
-  
+
 .search-btn:hover {
     color: #FF2625 !important;
     border: 1px solid #FF2625 !important;
 }
-  
+
 .exercise-video {
     display: flex;
     flex-direction: column;
@@ -138,50 +138,57 @@
     text-decoration: none;
 }
 
-input{
-  outline: none;
-  border: none;
+input {
+    outline: none;
+    border: none;
 }
-  
+
+.app {
+    font-family: "Outfit", sans-serif;
+    min-height: 100vh;
+    color: white;
+    background: linear-gradient(#0b004e, #1d152f, #002834);
+}
+
 @media screen and (max-width:1200px) {
     .detail-image {
-      width: 300px;
-      height: 300px;
+        width: 300px;
+        height: 300px;
     }
-    
+
     .react-horizontal-scrolling-menu--scroll-container {
-      width: 500px;
+        width: 500px;
     }
-  
+
     .left-arrow,
     .right-arrow {
-      position: absolute !important;
-      top: 50%;
-      transform: translateY(-50%);
+        position: absolute !important;
+        top: 50%;
+        transform: translateY(-50%);
     }
-  
+
     .left-arrow:hover,
     .right-arrow:hover {
-      transform: translateY(-50%) scale(1.3, 1.3);
+        transform: translateY(-50%) scale(1.3, 1.3);
     }
-  
+
     .hero-banner-img {
-      display: none;
+        display: none;
     }
-  
+
     .exercise-card {
-      width: 320px;
+        width: 320px;
     }
-  
+
     .exercise-video {
-      width: 320px;
-      height: 300px;
+        width: 320px;
+        height: 300px;
     }
-  
-  }
-  
-  @media screen and (max-width:400px) {
+
+}
+
+@media screen and (max-width:400px) {
     .exercise-card {
-      width: 280px;
+        width: 280px;
     }
 }
