@@ -8,8 +8,11 @@ import ResetPassword from "../pages/Auth/ResetPassword"
 import SystemsLayout from "../pages/Systems/SystemsLayout"
 import Fit from "../pages/Fit/Fit";
 import ExerciseDetail from "../pages/Fit/ExerciseDetail";
+import CoinProvider from "../pages/Crypto/Provider/CoinProvider";
 import Crypto from "../pages/Crypto/Crypto";
 import CoinDetail from "../pages/Crypto/CoinDetail";
+import OpinlyProvider from "../pages/Opinly/Provider/OpinlyProvider";
+import Opinly from "../pages/Opinly/Opinly";
 
 const router = createBrowserRouter([
     {
@@ -25,14 +28,25 @@ const router = createBrowserRouter([
                 path: 'systems', element: <SystemsLayout />,
                 children: [
                     // { index: true, element: <Dashboard /> },
-                    { path: 'fit', children: [
-                        { index: true, element: <Fit /> },
-                        { path: 'exercise/:id', element: <ExerciseDetail /> },
-                    ] },
-                    { path: 'crypto', children: [
-                        { index: true, element: <Crypto /> },
-                        { path: 'coin/:id', element: <CoinDetail /> },
-                    ] },
+                    {
+                        path: 'fit', children: [
+                            { index: true, element: <Fit /> },
+                            { path: 'exercise/:id', element: <ExerciseDetail /> },
+                        ]
+                    },
+                    {
+                        path: 'crypto', element: <CoinProvider />,
+                        children: [
+                            { index: true, element: <Crypto /> },
+                            { path: 'coin/:id', element: <CoinDetail /> },
+                        ]
+                    },
+                    {
+                        path: 'opinly', element: <OpinlyProvider />,
+                        children: [
+                            { index: true, element: <Opinly /> },
+                        ]
+                    }
                 ]
             }
         ]
