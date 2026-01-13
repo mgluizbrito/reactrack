@@ -26,5 +26,5 @@ app.use('/auth', authRouter);
 app.use('/user', userRouter);
 app.use(errorRouter);
 app.listen(port, () => {
-    console.log(`Servidor rodando no endereço http://localhost:${port}`);
+    console.log(`\n🚀 Servidor rodando no endereço http://localhost:${port}`);
 });

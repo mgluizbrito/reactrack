@@ -19,5 +19,5 @@ app.use(express.json())
 app.use(opinionsRouter)
 
 app.listen(3010, () => {
-    console.log(`Backend do Opinly pronto para depositar suas opiniões...`)
+    console.log(`\n💬 Backend do Opinly pronto para depositar suas opiniões...`)
 })

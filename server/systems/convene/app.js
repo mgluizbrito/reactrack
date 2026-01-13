@@ -30,5 +30,5 @@ app.use((error, req, res, next) => {
 })
 
 app.listen(3003, () => {
-    console.log(`Backend do Convene pronto para gerenciar seus eventos...`)
+    console.log(`\n📅 Backend do Convene pronto para gerenciar seus eventos...`)
 })
