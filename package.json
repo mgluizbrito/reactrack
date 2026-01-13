@@ -1,0 +1,18 @@
+{
+    "name": "reactrack",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "client": "npm run dev --prefix client",
+        "server": "npm run server --prefix server",
+        "all": "npm run all --prefix server",
+        "start": "concurrently \"npm run client\" \"npm run server\" \"npm run all\""
+    },
+    "dependencies": {
+        "concurrently": "^9.1.2"
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1"
+    }
+}
