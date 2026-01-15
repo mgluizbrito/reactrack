@@ -4,11 +4,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "nodemon --exec tsx server.ts",
+    "opinly": "nodemon --exec tsx systems/opinly/app.ts",
+    "convene": "nodemon --exec tsx systems/convene/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon dist/server.js",
-    "all": "concurrently \"npm run opinly\" \"npm run convene\"",
-    "opinly": "nodemon systems/opinly/app.js",
-    "convene": "nodemon systems/convene/app.js"
+    "build": "npx tsc",
+    "all": "concurrently \"npm run opinly\" \"npm run convene\""
   },
   "keywords": [],
   "author": "",
