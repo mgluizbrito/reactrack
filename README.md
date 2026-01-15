@@ -50,7 +50,7 @@
     npm install
     ```
 
-3.  **Configure Environment Variables:**
+3.  **Configure Environment Variables and Server Building:**
     Create a file named **`.env`** in the root directory and populate it with your configuration (use `.env.local` for local, user-specific settings).
 
     **`.env` Configuration:**
@@ -62,17 +62,22 @@
     SMTP_PASS=<Your_Email_Service_Password>
     SENDER_EMAIL=<The_Email_Address_Used_for_Sending>
     ```
-
+    **Build the Server: (if you want to deploy)**
+    Do this only after configuring the `.env` file.
+    ```bash
+    cd server
+    npm run build-server
+    ```
 ### Rodando a aplicação
 
 This project uses **TypeScript** and is compiled to the `dist` directory. The `package.json` setup uses `nodemon` for development.
 
-1.  **Start the server:**
+1.  **Start the server: (dev-mode)**
     ```bash
     cd server
-    npm run server
+    npm run dev-server
     ```
-    This command executes the script `"server": "nodemon dist/server.js"`, which watches for changes in the compiled JavaScript files and restarts the server.
+    This command executes the script `"dev-server": "nodemon --exec tsx server.ts"`, which watches for changes in TypeScript files and restarts the server.
 
 2.  **Access the API Documentation:**
     The API documentation, similar to a Swagger interface, is available via the home route defined in `routes/home.ts`: `http://localhost:4000`.
@@ -114,7 +119,7 @@ The `tsconfig.json` specifies modern standards for the backend:
     "target": "es2022",
     "module": "esnext",
     "rootDir": "./",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "outDir": "./dist"
   }
 }
