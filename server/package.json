@@ -4,12 +4,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec tsx server.ts",
-    "opinly": "nodemon --exec tsx systems/opinly/app.ts",
-    "convene": "nodemon --exec tsx systems/convene/app.ts",
+    "dev-server": "nodemon --exec tsx server.ts",
+    "opinly": "nodemon --exec tsx systems/opinly/app.js",
+    "convene": "nodemon --exec tsx systems/convene/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon dist/server.js",
-    "build": "npx tsc",
+    "server": "nodemon --exec node dist/server.cjs",
+    "build-server": "tsup && cp -r ./public  dist/public && cp -r views dist/views && cp .env dist/",
     "all": "concurrently \"npm run opinly\" \"npm run convene\""
   },
   "keywords": [],
@@ -34,6 +34,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/nodemailer": "^7.0.1",
     "concurrently": "^9.2.1",
+    "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.2"
   }
