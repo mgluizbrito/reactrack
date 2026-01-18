@@ -13,6 +13,11 @@ import { fileURLToPath } from "url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+import { getPath } from "./utils/paths"
+
+const publicPath = getPath('public')
+const viewsPath = getPath('views')
+
 const app = express()
 
 const port = process.env.PORT || 4000
@@ -28,7 +33,8 @@ app.use(express.json())
 
 app.use(cookieParser())
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use('/public', express.static(publicPath))
+app.set('views', viewsPath) // Ensure views are also found if using a view engine
 
 app.use('/', homeRouter)
 
